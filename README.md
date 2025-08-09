@@ -8,7 +8,7 @@
         <div>
           <img src="./data/readme/lavie_drink.jpg" width="100" height="100"/> <br>
           <strong>Lavie Lederman</strong> <br>
-          <a href="https://www.linkedin.com/in/Lavie-Lederman/">
+          <a href="https://www.linkedin.com/in/lavie-lederman/">
             <img src="./data/readme/LinkedInLogo.png" width="40" height="40"/>
           </a>
           <a href="https://github.com/lavieled">
