@@ -6,7 +6,7 @@
     <tr style="border: none;">
       <td align="center" style="border: none;">
         <div>
-          <img src="./data/readme/Lavie.png" width="100" height="100"/> <br>
+          <img src="./data/readme/lavie_drink.jpg" width="100" height="100"/> <br>
           <strong>Lavie Lederman</strong> <br>
           <a href="https://www.linkedin.com/in/Lavie-Lederman/">
             <img src="./data/readme/LinkedInLogo.png" width="40" height="40"/>
@@ -18,7 +18,7 @@
       </td>
       <td align="center" style="border: none;">
         <div>
-          <img src="./data/readme/Barry.png" width="100" height="100"/> <br>
+          <img src="./data/readme/barry_think.jpg" width="100" height="100"/> <br>
           <strong>Barry Shafran</strong> <br>
           <a href="https://www.linkedin.com/in/barry-shafran/">
             <img src="./data/readme/LinkedInLogo.png" width="40" height="40"/>
