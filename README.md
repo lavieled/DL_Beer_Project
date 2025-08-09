@@ -145,29 +145,20 @@ A comprehensive search was performed across multiple hyperparameter spaces, incl
 The study involved carefully selecting combinations of hyperparameters to achieve the best validation mean average precision (mAP).
 The objective function was optimized using `MedianPruner` and `TPESampler` for better exploration and exploitation across trials. Below is a detailed table of the tuned hyperparameters.
 
-| **Category** | **Hyperparameter** | **Range/Choices**                  | **Description**                          |
-|--------------|--------------------|--------------------------------------|--------------------------------------------|
-| Model        | `preweight_mode`   | `['random', 'freezing', 'fine_tuning']` | Strategy for loading model weights      |
-| Training     | `batch_size`       | `[4, 8]`                            | Number of samples per training batch      |
-| Training     | `epochs`           | `[10, 20]`                          | Number of training epochs                 |
-| Optimizer    | `optimizer`        | `['SGD', 'Adam', 'AdamW', 'RMSprop']` | Optimization algorithm                   |
-| SGD          | `lr`               | `[5e-3, 5e-2]` (log scale)          | Learning rate for SGD                     |
-| SGD          | `momentum`         | `[0.9, 0.99]`                       | Momentum for SGD                          |
-| SGD          | `weight_decay`     | `[1e-5, 1e-3]` (log scale)          | Weight decay for SGD                      |
-| Adam/AdamW   | `lr`               | `[1e-4, 1e-2]` (log scale)          | Learning rate for Adam/AdamW              |
-| Adam/AdamW   | `beta1`            | `[0.8, 0.999]`                      | Beta1 parameter                           |
-| Adam/AdamW   | `beta2`            | `[0.9, 0.999]`                      | Beta2 parameter                           |
-| RMSprop      | `lr`               | `[1e-3, 1e-2]` (log scale)          | Learning rate for RMSprop                 |
-| RMSprop      | `momentum`         | `[0.9, 0.99]`                       | Momentum for RMSprop                      |
-| RMSprop      | `weight_decay`     | `[1e-1, 1]` (log scale)             | Weight decay for RMSprop                  |
-| Scheduler    | `scheduler`        | `['StepLR', 'CosineAnnealingLR', 'ReduceLROnPlateau', 'OneCycleLR']` | Learning rate scheduler type |
-| StepLR       | `step_size`        | `[2, 5]`                            | Step size for StepLR                      |
-| StepLR       | `gamma`            | `[0.05, 0.5]`                       | Decay factor for StepLR                   |
-| CosineAnneal | `T_max`            | `[5, 15]`                           | Maximum cycle length for CosineAnnealingLR|
-| CosineAnneal | `eta_min`          | `[1e-7, 1e-5]` (log scale)          | Minimum learning rate                     |
-| Plateau      | `factor`           | `[0.1, 0.5]`                        | Decay factor for ReduceLROnPlateau        |
-| Plateau      | `patience`         | `[2, 5]`                            | Patience for ReduceLROnPlateau            |
-| OneCycleLR   | `max_lr`           | `[1e-4, 1e-2]` (log scale)          | Maximum learning rate for OneCycleLR      |
+| **Category**   | **Hyperparameter** | **Value / Range Used**               | **Description**                                   |
+|----------------|--------------------|---------------------------------------|---------------------------------------------------|
+| Model          | `preweight_mode`   | `random`                              | Model trained from scratch (no pretrained weights)|
+| Training       | `batch_size`       | `64`                                  | Number of samples per training batch              |
+| Training       | `epochs`           | `5` (search), `50` (final)            | Trials for tuning, then final full run            |
+| Optimizer      | `optimizer`        | `AdamW`                               | Optimization algorithm                            |
+| Adam/AdamW     | `lr`               | `[1e-4, 1e-3]` (log scale)            | Learning rate for AdamW (tuned)                   |
+| Adam/AdamW     | `beta1`            | `0.9`                                 | Beta1 parameter (default)                         |
+| Adam/AdamW     | `beta2`            | `0.999`                               | Beta2 parameter (default)                         |
+| AdamW          | `weight_decay`     | `[1e-6, 1e-3]` (log scale)            | Weight decay regularization (tuned)               |
+| Regularization | `dropout`          | `[0.1, 0.6]`                          | Dropout probability in classifier layers (tuned)  |
+| Scheduler      | `scheduler`        | `ReduceLROnPlateau`                   | Learning rate scheduler type                      |
+| Plateau        | `factor`           | `0.5`                                 | Decay factor for ReduceLROnPlateau                 |
+| Plateau        | `patience`         | `[2, 4]`                              | Patience for ReduceLROnPlateau (tuned)             |
 
 - The best configurations for each model was saved for future training (i.e. `data/models/fasterrcnn_resnet50_fpn/fasterrcnn_resnet50_fpn_best_params.json`)
 - Results available in Optuna dashboard at `./data/models/db.sqlite3`
