@@ -20,7 +20,7 @@
         <div>
           <img src="./data/readme/barry_think.jpg" width="100" height="100"/> <br>
           <strong>Barry Shafran</strong> <br>
-          <a href="https://www.linkedin.com/in/barry-shafran/">
+          <a href="https://www.linkedin.com/in/barry-shafran-562979244/">
             <img src="./data/readme/LinkedInLogo.png" width="40" height="40"/>
           </a>
           <a href="https://github.com/barryshaf">
