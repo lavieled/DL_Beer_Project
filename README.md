@@ -67,18 +67,15 @@ we also used the YOLO object detection model to aide us in gathering data for th
 
 | File Name                       | Purpose                                                                 |
 |---------------------------------|-------------------------------------------------------------------------|
-| `data_process.py`               | Handles data preprocessing, such as loading and transforming datasets.  |
-| `trainer.py`                    | Manages the training process for torchvision models.                    |
-| `evaluator.py`                  | Evaluates the performance of trained models using metrics.              |
-| `motion_blur.py`                | Applies our self synthesized motion blur effects to images for testing. |
-| `utils.py`                      | Contains utility functions used across different modules.               |
-| `torchvision_models_train.ipynb`| Jupyter notebook for training models using torchvision.                 |
-| `models_data.json`              | Stores metadata for the models results                                  |
-| `main.ipynb`                    | Main notebook for orchestrating the project workflow.                   |
-| `models_evaluation_with_noise`   | Directory containing notebooks for training and evaluating models with motion blur noise. |
-| `models_evaluation_with_severity_levels.ipnb` | Notebook for evaluating models with pothole severity levels.       |
-| `video_inference.ipynb` | Notebook for running inference on a video using the best models. | 
-| `config`                        | Directory containing environment configuration files.                   |
+| `login_and_get_links.py`        | login to untapd website and retrive links for specified beer type photos.|
+| `download.py`                   | uses the image linkes to go and download all the wanted photos.         |
+| `sortToCupNoCup.py`             | using YOLO model to identify and crop out the beers for the photos      |
+| `selfTest.py`                   | A simple GUI game to test human ability to solve our problem, used as a benchmark. |
+| `fullModelTest.py`              | a script that pipelines the process from the uncropped untagged image input to a results with bbox and tags. |
+| `BeerDL_50_augmented.ipynb`     | Jupyter notebook for barry's version of a beer classifier.                 |
+| `BeerDL_lavie_model.ipynb`      | Jupyter notebook for barry's version of a beer classifier.                      |
+| `EffnetAndDinoTraining.ipynb`   | Directory containing notebooks for training and evaluating models with motion blur noise. |
+| `config!!!!11!!!!`                        | Directory containing environment configuration files.                   |
 | `data`                          | Directory containing all the datasets and results                       |
 | `HW`                            | Directory for our homework assigments.                                  |
 
