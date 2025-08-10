@@ -57,7 +57,6 @@ we also used the YOLO object detection model to aide us in gathering data for th
 * [Object Detection Models](#Object-Detection-Models)
   * [Hyperparameter Tuning](#Hyperparameter-Tuning)
 * [Training Results](#Training-Results)
-* [Motion Blur Noise](#Motion-Blur-Noise)
 * [Data Augmentations](#Data-Augmentations)
 * [Post Augmentations Results](#Post-Augmentations-Results)
 * [Potholes Severity](#Potholes-Severity)
@@ -106,13 +105,9 @@ After installing the required libraries, you can run the `main.ipynb` notebook t
 If you wish to train the models and evaluate them your self you can run the notebooks under `models_evaluation_with_noise` which contain the training and evaluation process for the all the models we analysed with the motion blur noise.
 
 You can also download our weights from the following link:
-- [Google Drive](https://drive.google.com/drive/folders/1Zj22MpCoxBWR9_azWvHRTWe_qfoa9Fsj?usp=drive_link)
+- [Google Drive](https://drive.google.com/drive/folders/1Zj22MpCoxBWR9_azWvHRTWe_qfoa9Fsj?usp=drive_link)//barry link wieght 
   
   Just download the `models.zip` file and replace it with the existing `./data/models` folder in the repository.
-
-The optuna hyperparameters tuning can be run using the `torchvision_models_train.ipynb` notebook. The results of the hyperparameters tuning can be viewed using the optuna dashboard (see below).
-
-You can check the pothole severity classification we added to the dataset in the `models_evaluation_with_severity_levels.ipynb` notebook.
 
 ##Gathering the Dataset
 we could not fiind any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
@@ -137,10 +132,9 @@ In this project we trained the following SOTA object detection models:
 - `yolov8m` [YOLOv8 models documentation](https://docs.ultralytics.com/models/yolov8/)
 
 ### Hyperparameter Tuning
-In this project, hyperparameter tuning was conducted using Optuna to optimize training on various torchvision models.
-A comprehensive search was performed across multiple hyperparameter spaces, including model preweight strategies, optimizer types, learning rates, momentum, and weight decay parameters.
-The study involved carefully selecting combinations of hyperparameters to achieve the best validation mean average precision (mAP).
-The objective function was optimized using `MedianPruner` and `TPESampler` for better exploration and exploitation across trials. Below is a detailed table of the tuned hyperparameters.
+A comprehensive search was performed across multiple hyperparameter spaces, including model preweight strategies, learning rates, momentum, and weight decay parameters.
+The study involved carefully selecting combinations of hyperparameters to achieve the best validation score.
+Below is a detailed table of the tuned hyperparameters.
 
 | **Category**   | **Hyperparameter** | **Value / Range Used**               | **Description**                                   |
 |----------------|--------------------|---------------------------------------|---------------------------------------------------|
@@ -157,26 +151,13 @@ The objective function was optimized using `MedianPruner` and `TPESampler` for b
 | Plateau        | `factor`           | `0.5`                                 | Decay factor for ReduceLROnPlateau                 |
 | Plateau        | `patience`         | `[2, 4]`                              | Patience for ReduceLROnPlateau (tuned)             |
 
-- The best configurations for each model was saved for future training (i.e. `data/models/fasterrcnn_resnet50_fpn/fasterrcnn_resnet50_fpn_best_params.json`)
-- Results available in Optuna dashboard at `./data/models/db.sqlite3`
-  - launch it using:
-  ```
-  optuna-dashboard ./data/models/db.sqlite3
-  ```
-  - then open your browser at `http://localhost:8080`
-- At the end, each configuration was set to be trained with a batch size of 8 for 100 epochs.
-- Best weights achieving the highest mAP@50 on the validation set were saved.
+- The best configurations for each model was saved for future training.
+- At the end, each configuration was set to be trained with a batch size of 64 for 40 epochs.
 
 ## Training Results
 
 <div align="center">
   <img src="./data/plots/training_loss_val_map/training_loss_val_map.png"/>
-</div>
-
-## Motion Blur Noise
-
-<div align="center">
-  <img src="./data/motion_blur_data/motion_blur_types.png"/>
 </div>
 
 ## Data Augmentations
