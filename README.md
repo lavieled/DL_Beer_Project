@@ -160,17 +160,21 @@ Below is a detailed table of the tuned hyperparameters.
   <img src="./data/plots/training_loss_val_map/training_loss_val_map.png"/>
 </div>
 
-## Data Augmentations
-To cope with the motion blur noise, we applied the following data augmentations using [kornia](https://kornia.readthedocs.io/en/latest/):
+## Data Augmentations  
+To improve robustness against variations in image orientation, perspective, and scale, we applied the following augmentations using [`torchvision.transforms`](https://pytorch.org/vision/stable/transforms.html):  
 
-| **Augmentation**       | **Parameters**                                                                 | **Description**                                                                 |
-|------------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| `RandomMotionBlur`     | `kernel_size=(3, 51)`, `angle=(-180.0, 180.0)`, `direction=(-1.0, 1.0)`, `p=0.4` | Apply random motion blur.                                                      |
-| `RandomGaussianBlur`   | `kernel_size=(3, 3)`, `sigma=(0.1, 2.0)`, `p=0.3`                               | Apply random Gaussian blur to simulate out-of-focus blur.                      |
-| `RandomSharpness`      | `sharpness=(0.5, 2.0)`, `p=0.3`                                                 | Adjust the sharpness of the image to simulate varying levels of focus.         |
-| `ColorJiggle`          | `brightness=0.2`, `contrast=0.2`, `saturation=0.2`, `p=0.2`                      | Apply a random transformation to the brightness, contrast, saturation, and hue.|
+| **Augmentation**          | **Parameters**                                      | **Description**                                                                 |
+|---------------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
+| `Resize`                  | `(256, 256)`                                        | Resize the input image to a fixed size.                                         |
+| `RandomCrop`              | `224`                                               | Randomly crop the image to 224×224 pixels.                                      |
+| `RandomHorizontalFlip`    | *(default p=0.5)*                                   | Flip the image horizontally with a probability of 0.5.                          |
+| `RandomRotation`          | `20`                                                | Rotate the image randomly within ±20 degrees.                                   |
+| `RandomAffine`            | `degrees=15`, `translate=(0.1, 0.1)`                | Apply random affine transformations with rotation and translation.              |
+| `RandomPerspective`       | `distortion_scale=0.2`, *(default p=0.5)*           | Apply a random perspective transformation to simulate viewpoint changes.        |
+| `ToTensor`                | —                                                   | Convert the image to a PyTorch tensor.                                          |
+| `ToPILImage`              | —                                                   | Convert the tensor back to a PIL image (for further processing or visualization).|
 
-These augmentations were chosen to help the model generalize better to different types of blur that might be encountered in real-world scenarios.
+These augmentations were chosen to improve the model ability to generalize to different viewing angles, making it more robust.  
 
 ## Post Augmentations Results
 
