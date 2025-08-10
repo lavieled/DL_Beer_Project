@@ -199,17 +199,17 @@ These augmentations were chosen to improve the model ability to generalize to di
 ### Results on the Test Set with Natural Motion Blur
 
 <div align="center">
-  <img src="./data/plots/test_map_fps/natural_test_map_fps.png" style="height: 500px;"/>
+  <img src="./" style="height: 500px;"/>
 </div>
 
 ## Potholes Severity
 
 <div align="center">
-  <img src="./data/plots/severity_checks/potholes_with_severity_images.png"/>
+  <img src="./"/>
 </div>
 
 <div align="center">
-  <img src="./data/plots/severity_checks/pothole_class_distribution.png"/>
+  <img src="./"/>
 </div>
 
 
