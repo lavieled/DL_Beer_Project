@@ -156,9 +156,24 @@ Below is a detailed table of the tuned hyperparameters.
 
 ## Training Results
 
-<div align="center">
-  <img src="./data/plots/training_loss_val_map/training_loss_val_map.png"/>
-</div>
+### our model's architecture
+
+```mermaid
+graph TD
+    A[Input 3×224×224] --> B[Conv 3→64<br/>BN + ReLU + MaxPool]
+    B --> C[Conv 64→128<br/>BN + ReLU + MaxPool]
+    C --> D[Conv 128→256<br/>BN + ReLU + MaxPool]
+    D --> E[Conv 256→512<br/>BN + ReLU]
+    E --> F[AdaptiveAvgPool 1×1]
+    F --> G[Flatten]
+    G --> H[Dropout(0.2)]
+    H --> I[Linear 512→6<br/>Output logits]
+```
+
+<img src="./data/readme/barry_no_aug_results.png" width="400"/> 
+
+
+*No Augmentations Test Accuracy: **72.30%** — Trained without data augmentations. Accuracy improves rapidly in the first 15 epochs and then plateaus around ~68–70%. The steady loss decrease indicates consistent learning, but the absence of augmentations likely limits the model’s ability to generalize to unseen variations.*
 
 ## Data Augmentations  
 To improve robustness against variations in image orientation, perspective, and scale, we applied the following augmentations using [`torchvision.transforms`](https://pytorch.org/vision/stable/transforms.html):  
@@ -182,13 +197,13 @@ These augmentations were chosen to improve the model ability to generalize to di
 
 <img src="./data/readme/barry_model_results.png" width="400"/> 
 
-*Final Test Accuracy: **72.59%** — Accuracy improves steadily throughout training, reaching a plateau near the end. Loss decreases consistently, indicating stable learning without major overfitting. However, the final accuracy is lower compared to other approaches, suggesting that this configuration may lack sufficient capacity to capture all dataset-specific patterns.*
+*Barry's Test Accuracy: **72.59%** — Accuracy improves steadily throughout training, reaching a plateau near the end. Loss decreases consistently, indicating stable learning without major overfitting. However, the final accuracy is lower compared to other approaches, suggesting that this configuration may lack sufficient capacity to capture all dataset-specific patterns.*
 
 
 ### Lavie's model results
 <img src="./data/readme/lavie_model_results.png" width="400"/> 
 
-*Final Test Accuracy: **71.72%** — Accuracy improves quickly in the first 10 epochs, then gradually climbs toward ~72%. The steady decline in training loss suggests consistent learning without severe overfitting. However, the relatively early plateau in accuracy indicates that the model may be limited by its capacity or the features being used, preventing it from capturing all class distinctions effectively.*
+*Lavie's Test Accuracy: **71.72%** — Accuracy improves quickly in the first 10 epochs, then gradually climbs toward ~72%. The steady decline in training loss suggests consistent learning without severe overfitting. However, the relatively early plateau in accuracy indicates that the model may be limited by its capacity or the features being used, preventing it from capturing all class distinctions effectively.*
 
 ### Effnet results
 
