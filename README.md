@@ -180,14 +180,14 @@ These augmentations were chosen to improve the model ability to generalize to di
 
 ### Barry's model results
 
-![Model Result](./data/readme/barry_model_result.png)  
+![Model Result](./data/readme/barry_model_resultd.png)  
 
 *Final Test Accuracy: **72.59%** — Accuracy improves steadily throughout training, reaching a plateau near the end. Loss decreases consistently, indicating stable learning without major overfitting. However, the final accuracy is lower compared to other approaches, suggesting that this configuration may lack sufficient capacity to capture all dataset-specific patterns.*
 
 
 ### Lavie's model results
 
-![Model Result](./data/readme/lavie_model_result.png)  
+![Model Result](./data/readme/lavie_model_resultd.png)  
 *Final Test Accuracy: **71.72%** — Accuracy improves quickly in the first 10 epochs, then gradually climbs toward ~72%. The steady decline in training loss suggests consistent learning without severe overfitting. However, the relatively early plateau in accuracy indicates that the model may be limited by its capacity or the features being used, preventing it from capturing all class distinctions effectively.*
 
 ### Effnet results
