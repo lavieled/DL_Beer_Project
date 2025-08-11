@@ -192,27 +192,21 @@ These augmentations were chosen to improve the model ability to generalize to di
 
 ### Effnet results
 
-| DINO – Feature Extraction | DINO – Partial Freezing | DINO – Full Fine-Tuning |
-|---------------------------|-------------------------|-------------------------|
+### Model Performance Comparisons
+
+| **DINO – Feature Extraction** | **DINO – Partial Freezing** | **DINO – Full Fine-Tuning** |
+|-------------------------------|-----------------------------|-----------------------------|
 | ![DINO Feature Extraction](./data/readme/dino_feature_ext_result.png) | ![DINO Partial](./data/readme/dino_partial_result.png) | ![DINO Full](./data/readme/dino_full_result.png) |
+| *Final Test Accuracy: **73.91%** — Training is stable but accuracy plateaus early, suggesting that frozen pre-trained features limit adaptation to beer-specific patterns.* | *Final Test Accuracy: **83.53%** — Significant improvement from feature extraction. Accuracy stabilizes after ~5 epochs, showing that fine-tuning later layers captures more domain-specific details.* | *Final Test Accuracy: **80.78%** — Lower than partial freezing despite full fine-tuning. Likely due to overfitting or disruption of pre-trained features during training.* |
 
 
 ### Dino results
 
-| EfficientNet – Feature Extraction | EfficientNet – Partial Freezing | EfficientNet – Full Fine-Tuning |
-|-----------------------------------|----------------------------------|----------------------------------|
+
+| **EfficientNet – Feature Extraction** | **EfficientNet – Partial Freezing** | **EfficientNet – Full Fine-Tuning** |
+|---------------------------------------|--------------------------------------|--------------------------------------|
 | ![EfficientNet Feature Extraction](./data/readme/effnet_feature_ext_result.png) | ![EfficientNet Partial](./data/readme/effnet_partial_results.png) | ![EfficientNet Full](./data/readme/effnet_full_results.png) |
-
-
-## Potholes Severity
-
-<div align="center">
-  <img src="./"/>
-</div>
-
-<div align="center">
-  <img src="./"/>
-</div>
+| *Final Test Accuracy: **67.76%** — The lowest-performing setup overall. Limited adaptation to the dataset due to frozen features.* | *Final Test Accuracy: **83.67%** — Large jump in accuracy, showing partial fine-tuning is highly effective for EfficientNet on this dataset.* | *Final Test Accuracy: **87.76%** — The best performance overall, with a steady accuracy climb and minimal overfitting.* |
 
 
 ## References
