@@ -176,27 +176,28 @@ To improve robustness against variations in image orientation, perspective, and 
 
 These augmentations were chosen to improve the model ability to generalize to different viewing angles, making it more robust.  
 
-## Post Augmentations Results
+## Results
 
-### Results on the Clean Test Set
+### Barry's model results
 
 <div align="center">
   <img src="./data/plots/test_map_fps/clean_test_map_fps_with_aug.png" style="height: 500px;"/>
 </div>
 
-### Results on the Test Set Test Set with Uniform Motion Blur
+### Lavie's model results
 
 <div align="center">
   <img src="./data/plots/test_map_fps/uniform_test_map_fps.png" style="height: 250px;"/>
 </div>
 
-### Results on the Test Set with Ellipse Motion Blur
+### Effnet results
 
-<div align="center">
-  <img src="./data/plots/test_map_fps/ellipse_test_map_fps.png" style="height: 250px;"/>
-</div>
+| ![Clean Test Set Results](./data/plots/test_map_fps/clean_test_map_fps_with_aug.png) | ![Uniform Motion Blur Results](./data/plots/test_map_fps/uniform_test_map_fps.png) | ![Ellipse Motion Blur Results](./data/plots/test_map_fps/ellipse_test_map_fps.png) |
+|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Clean Test Set Results**                                                           | **Uniform Motion Blur**                                                            | **Ellipse Motion Blur**                                                            |
 
-### Results on the Test Set with Natural Motion Blur
+
+### Dino results
 
 <div align="center">
   <img src="./" style="height: 500px;"/>
