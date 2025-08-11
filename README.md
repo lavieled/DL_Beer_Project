@@ -192,16 +192,17 @@ These augmentations were chosen to improve the model ability to generalize to di
 
 ### Effnet results
 
-| ![Clean Test Set Results](./data/plots/test_map_fps/clean_test_map_fps_with_aug.png) | ![Uniform Motion Blur Results](./data/plots/test_map_fps/uniform_test_map_fps.png) | ![Ellipse Motion Blur Results](./data/plots/test_map_fps/ellipse_test_map_fps.png) |
-|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **Clean Test Set Results**                                                           | **Uniform Motion Blur**                                                            | **Ellipse Motion Blur**                                                            |
+| DINO – Feature Extraction | DINO – Partial Freezing | DINO – Full Fine-Tuning |
+|---------------------------|-------------------------|-------------------------|
+| ![DINO Feature Extraction](./data/readme/dino_feature_ext_result.png) | ![DINO Partial](./data/readme/dino_partial_result.png) | ![DINO Full](./data/readme/dino_full_result.png) |
 
 
 ### Dino results
 
-<div align="center">
-  <img src="./" style="height: 500px;"/>
-</div>
+| EfficientNet – Feature Extraction | EfficientNet – Partial Freezing | EfficientNet – Full Fine-Tuning |
+|-----------------------------------|----------------------------------|----------------------------------|
+| ![EfficientNet Feature Extraction](./data/readme/effnet_feature_ext_result.png) | ![EfficientNet Partial](./data/readme/effnet_partial_results.png) | ![EfficientNet Full](./data/readme/effnet_full_results.png) |
+
 
 ## Potholes Severity
 
