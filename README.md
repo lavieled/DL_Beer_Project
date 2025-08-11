@@ -159,15 +159,26 @@ Below is a detailed table of the tuned hyperparameters.
 ### our model's architecture
 
 ```mermaid
-graph TD
-    A[Input 3×224×224] --> B[Conv 3→64<br/>BN + ReLU + MaxPool]
-    B --> C[Conv 64→128<br/>BN + ReLU + MaxPool]
-    C --> D[Conv 128→256<br/>BN + ReLU + MaxPool]
-    D --> E[Conv 256→512<br/>BN + ReLU]
-    E --> F[AdaptiveAvgPool 1×1]
-    F --> G[Flatten]
-    G --> H[Dropout(0.2)]
-    H --> I[Linear 512→6<br/>Output logits]
+flowchart TD
+    A[Input 3×224×224]
+    B[Conv 3→64 + BN + ReLU + MaxPool]
+    C[Conv 64→128 + BN + ReLU + MaxPool]
+    D[Conv 128→256 + BN + ReLU + MaxPool]
+    E[Conv 256→512 + BN + ReLU]
+    F[AdaptiveAvgPool 1×1]
+    G[Flatten]
+    H[Dropout p=0.2]
+    I[Linear 512→6 · logits]
+
+    A --> B;
+    B --> C;
+    C --> D;
+    D --> E;
+    E --> F;
+    F --> G;
+    G --> H;
+    H --> I;
+
 ```
 
 <img src="./data/readme/barry_no_aug_results.png" width="400"/> 
