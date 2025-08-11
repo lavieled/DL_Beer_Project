@@ -187,6 +187,7 @@ These augmentations were chosen to improve the model ability to generalize to di
 
 ### Lavie's model results
 <img src="./data/readme/lavie_model_results.png" width="400"/> 
+
 *Final Test Accuracy: **71.72%** — Accuracy improves quickly in the first 10 epochs, then gradually climbs toward ~72%. The steady decline in training loss suggests consistent learning without severe overfitting. However, the relatively early plateau in accuracy indicates that the model may be limited by its capacity or the features being used, preventing it from capturing all class distinctions effectively.*
 
 ### Effnet results
