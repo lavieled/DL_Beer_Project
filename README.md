@@ -181,6 +181,7 @@ flowchart TD
 
 ```
 
+### Model results with no data augmentations
 <img src="./data/readme/barry_no_aug_results.png" width="400"/> 
 
 
