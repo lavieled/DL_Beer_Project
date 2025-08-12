@@ -40,10 +40,17 @@
 </h4>
 
 ## Abstract
-Dont you hate it when you drink a beer and dont know what type is it? or when the waiter mixed up your order?
-In this project we tested different state of the art classification models to try to recognize beer types from visual input, and comparing the results we got with different approaches.
-using a basic model we built ourselves and a GUI to play a game of human beer detection as a benchmark.
-we also used the YOLO object detection model to aide us in gathering data for this project.
+Don’t you hate it when you drink a beer and don’t know what type it is? Or when the waiter mixes up your order?
+
+In this project, we used the Untappd site and processed the data using the YOLO object detection model. On the modified dataset, we applied several augmentations and tested different state-of-the-art classification models, including DINO and EfficientNet, comparing their performance in recognizing beer types from visual input. We evaluated the results using different approaches to the data efficiency problem (freeze-out, fine-tuning, and partial training). 
+
+We also compared our results to a “human benchmark,” implemented as a GUI game for human beer detection, as well as to a basic model we built ourselves.
+
+
+
+
+
+
 <div align="center">
   <img src="./data/readme/yolo_video.gif" alt="Pothole Detection" width="600">//change
 </div>
@@ -71,9 +78,9 @@ we also used the YOLO object detection model to aide us in gathering data for th
 | `sortToCupNoCup.py`             | using YOLO model to identify and crop out the beers for the photos      |
 | `selfTest.py`                   | A simple GUI game to test human ability to solve our problem, used as a benchmark. |
 | `fullModelTest.py`              | a script that pipelines the process from the uncropped untagged image input to a results with bbox and tags. |
-| `BeerDL_50_augmented.ipynb`     | Jupyter notebook for barry's version of a beer classifier.                 |
-| `BeerDL_lavie_model.ipynb`      | Jupyter notebook for barry's version of a beer classifier.                      |
-| `EffnetAndDinoTraining.ipynb`   | Directory containing notebooks for training and evaluating models with motion blur noise. |
+| `BeerDL_50_augmented.ipynb`     | Jupyter notebook for a simple CNN version of a beer classifier.                 |
+| `BeerDL_lavie_model.ipynb`      |** Jupyter notebook for Lavie's version of a beer classifier. **                     |
+| `EffnetAndDinoTraining.ipynb`   |  Jupyter notebook for comparing DINO and EffNet   |
 | `config!!!!11!!!!`                        | Directory containing environment configuration files.                   |
 | `data`                          | Directory containing all the datasets and results                       |
 | `HW`                            | Directory for our homework assigments.                                  |
@@ -81,22 +88,47 @@ we also used the YOLO object detection model to aide us in gathering data for th
 ## Installation Instructions
 
 1. Get Anaconda with Python 3, follow the instructions according to your OS (Windows/Mac/Linux) at [link](https://www.anaconda.com/download)
-2. Install the basic packages using the provided `environment.yml` file by running: `conda env create -f config/environment.yml` which will create a new conda environment named `deep_learn`. You can use `config/environment_no_cuda.yml` for an environment that uses pytorch cpu version.
-3. Alternatively, you can create a new environment and install packages from scratch:
-In Windows open `Anaconda Prompt` from the start menu, in Mac/Linux open the terminal and run `conda create --name deep_learn`. Full guide at [link](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands)
-4. To activate the environment, open the terminal (or `Anaconda Prompt` in Windows) and run `conda activate deep_learn`
-5. Install the required libraries according to the table below (to search for a specific library and the corresponding command you can also look at [link](https://anaconda.org/))
+2. Install the packages bellow.
+3. Alternatively, you can use [requirements.txt](./requirements.txt) and run 'pip install -r requirements.txt'.
 
-### Libraries to Install
+### Core Deep Learning & Computer Vision
 
 | Library | Installation Command |
 |---------|----------------------|
-| [numpy](https://numpy.org/) | `conda install -c conda-forge numpy` |
-| [Pillow (PIL)](https://pillow.readthedocs.io/) | `conda install -c conda-forge pillow` |
-| [tqdm](https://tqdm.github.io/) | `conda install -c conda-forge tqdm` |
-| [scikit-learn](https://scikit-learn.org/stable/) | `conda install -c conda-forge scikit-learn` |
-| [PyTorch](https://pytorch.org/) | `conda install pytorch -c pytorch` |
-| [torchvision](https://pytorch.org/vision/stable/) | `conda install torchvision -c pytorch` |
+| [PyTorch](https://pytorch.org/) | `pip install torch` |
+| [torchvision](https://pytorch.org/vision/stable/) | `pip install torchvision` |
+| [opencv-python](https://opencv.org/) | `pip install opencv-python` |
+| [ultralytics](https://docs.ultralytics.com/) | `pip install ultralytics` |
+| [timm](https://github.com/huggingface/pytorch-image-models) | `pip install timm` |
+
+### Data Processing & Analysis
+
+| Library | Installation Command |
+|---------|----------------------|
+| [numpy](https://numpy.org/) | `pip install numpy` |
+| [pandas](https://pandas.pydata.org/) | `pip install pandas` |
+
+### Image Processing & Visualization
+
+| Library | Installation Command |
+|---------|----------------------|
+| [Pillow (PIL)](https://pillow.readthedocs.io/) | `pip install Pillow` |
+| [matplotlib](https://matplotlib.org/) | `pip install matplotlib` |
+
+### Web Scraping & Data Collection
+
+| Library | Installation Command |
+|---------|----------------------|
+| [selenium](https://selenium-python.readthedocs.io/) | `pip install selenium` |
+| [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/) | `pip install beautifulsoup4` |
+| [requests](https://requests.readthedocs.io/) | `pip install requests` |
+
+### User Interface & Utilities
+
+| Library | Installation Command |
+|---------|----------------------|
+| [tkinter](https://docs.python.org/3/library/tkinter.html) | `pip install tk` |
+| [tqdm](https://tqdm.github.io/) | `pip install tqdm` |
 
 
 ## How to Use
