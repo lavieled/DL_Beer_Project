@@ -169,7 +169,7 @@ Below is a detailed table of the tuned hyperparameters.
 | Training       | `batch_size`       | `64`                                  | Number of samples per training batch              |
 | Training       | `epochs`           | `5` (search), `50` (our CNN) , '20' (improted models)           | Trials for tuning, then final full run            |
 | Optimizer      | `optimizer`        | `AdamW`                               | Optimization algorithm                            |
-| Adam/AdamW     | `lr`               | `[1e-4, 1e-3]` (log scale)            | Learning rate for AdamW (tuned)                   |
+| AdamW          | `lr`               | `[1e-4, 1e-3]` (log scale)            | Learning rate for AdamW (tuned)                   |
 | AdamW          | `weight_decay`     | `[1e-6, 1e-3]` (log scale)            | Weight decay regularization (tuned)               |
 | Regularization | `dropout`          | `[0.1, 0.6]`                          | Dropout probability in classifier layers (tuned)  |
 | Scheduler      | `scheduler`        | `ReduceLROnPlateau`                   | Learning rate scheduler type                      |
@@ -212,21 +212,52 @@ flowchart TD
 
 *No Augmentations Test Accuracy: **72.30%** — Trained without data augmentations. Accuracy improves rapidly in the first 15 epochs and then plateaus around ~68–70%. The steady loss decrease indicates consistent learning, but the absence of augmentations likely limits the model’s ability to generalize to unseen variations.*
 
-## Data Augmentations  
-To improve robustness against variations in image orientation, perspective, and scale, we applied the following augmentations using [`torchvision.transforms`](https://pytorch.org/vision/stable/transforms.html):  
+## Data Augmentations
+
+We applied different transformations for training and evaluation to ensure robust learning while keeping validation/testing consistent and unbiased.  
+All transforms were implemented using [torchvision.transforms](https://pytorch.org/vision/stable/transforms.html).
+
+### **Training Transformations**
+| **Augmentation**          | **Parameters**                                      | **Description**                                                                 |
+|---------------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
+| `Resize`                  | `(256, 256)`                                        | Resize the input image to a fixed size of 256×256 pixels.                       |
+| `RandomCrop`              | `IMG_SIZE`                                          | Randomly crop the image to `IMG_SIZE`×`IMG_SIZE` pixels.                        |
+| `RandomHorizontalFlip`    | *(default p=0.5)*                                   | Flip the image horizontally with a probability of 0.5.                          |
+| `ColorJitter`             | `(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05)` | Randomly change image brightness, contrast, saturation, and hue.                |
+| `RandomRotation`          | `15`                                                | Rotate the image randomly within ±15 degrees.                                   |
+| `ToTensor`                | —                                                   | Convert the image to a PyTorch tensor.                                          |
+| `Normalize`               | `mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]` | Normalize pixel values using ImageNet statistics.                               |
+
+### **Evaluation Transformations**  
+| **Augmentation**          | **Parameters**                                      | **Description**                                                                 |
+|---------------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
+| `Resize`                  | `(IMG_SIZE, IMG_SIZE)`                              | Resize the input image to `IMG_SIZE`×`IMG_SIZE` pixels.                         |
+| `ToTensor`                | —                                                   | Convert the image to a PyTorch tensor.                                          |
+| `Normalize`               | `mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]` | Normalize pixel values using ImageNet statistics.                               |
+
+### **General Transformations**  
+| **Augmentation**          | **Parameters**                                      | **Description**                                                                 |
+|---------------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
+| `Resize`                  | `(224, 224)`                                        | Resize the input image to 224×224 pixels.                                       |
+| `ToTensor`                | —                                                   | Convert the image to a PyTorch tensor.                                          |
+
+
+### **Additional Augmentation Pipeline for Dataset Expansion**
+
+To further increase dataset diversity and size, we created an **additional augmented sample for every original image** using the following transformations:
 
 | **Augmentation**          | **Parameters**                                      | **Description**                                                                 |
 |---------------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
-| `Resize`                  | `(256, 256)`                                        | Resize the input image to a fixed size.                                         |
+| `Resize`                  | `(256, 256)`                                        | Resize the input image to 256×256 pixels.                                       |
 | `RandomCrop`              | `224`                                               | Randomly crop the image to 224×224 pixels.                                      |
 | `RandomHorizontalFlip`    | *(default p=0.5)*                                   | Flip the image horizontally with a probability of 0.5.                          |
 | `RandomRotation`          | `20`                                                | Rotate the image randomly within ±20 degrees.                                   |
-| `RandomAffine`            | `degrees=15`, `translate=(0.1, 0.1)`                | Apply random affine transformations with rotation and translation.              |
-| `RandomPerspective`       | `distortion_scale=0.2`, *(default p=0.5)*           | Apply a random perspective transformation to simulate viewpoint changes.        |
+| `RandomAffine`            | `degrees=15`, `translate=(0.1, 0.1)`, `scale=(0.9, 1.1)` | Apply random affine transformations with rotation, translation, and scaling.   |
+| `RandomPerspective`       | `distortion_scale=0.3`, *(default p=0.5)*           | Apply a random perspective transformation to simulate viewpoint changes.        |
 | `ToTensor`                | —                                                   | Convert the image to a PyTorch tensor.                                          |
 | `ToPILImage`              | —                                                   | Convert the tensor back to a PIL image (for further processing or visualization).|
 
-These augmentations were chosen to improve the model ability to generalize to different viewing angles, making it more robust.  
+**Note:** This process effectively **doubled the dataset size** by generating one additional augmented image for every original photo.
 
 ## Results
 
