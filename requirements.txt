@@ -1,0 +1,14 @@
+torch
+torchvision
+opencv-python
+ultralytics
+timm
+numpy
+pandas
+scikit-learn
+Pillow
+matplotlib
+selenium
+beautifulsoup4
+requests
+tqdm
