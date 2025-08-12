@@ -132,36 +132,31 @@ We also compared our results to a “human benchmark,” implemented as a GUI ga
 
 
 ## How to Use
-After installing the required libraries, you can run the `main.ipynb` notebook to follow through with the project results and anlysis.
-
-If you wish to train the models and evaluate them your self you can run the notebooks under `models_evaluation_with_noise` which contain the training and evaluation process for the all the models we analysed with the motion blur noise.
+After installing the required libraries, you can run the `fullModelTest.py`to see the results for a custom photo.
+If you wish to train the models and evaluate them your self you can run the notebooks under `src` which contain the training and evaluation process for the all the models we analysed.
+If you wish to test yourself, you can run 'selfTest.py' and have fun. 
 
 You can also download our weights from the following link:
 - [Google Drive](https://drive.google.com/drive/folders/1Zj22MpCoxBWR9_azWvHRTWe_qfoa9Fsj?usp=drive_link)//barry link wieght 
   
   Just download the `models.zip` file and replace it with the existing `./data/models` folder in the repository.
 
-##Gathering the Dataset
-we could not fiind any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
-we wrote a script(insert here) that downloads photos from the online website for beer lovers (untapped link), using the tags from the website itself as out correct labels( for example, we send the script to download all photos of a beer we know is a wheat beer, thus we created a "labeled" dataset.
-next, since all the photos we user uploaded(social media like) we had a lot of irrelevant objects in the photos, so we used the pre-trained YOLO_v2 for its object detection and bbox features to get only the images of the beers themselves.
-note that the YOLO model only had options for detecting cups or bottles, so we still had to manuelly delete a few dozen photos, but we used them for out control group as "not beer" label.
+## Gathering the Dataset
+We could not fiind any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
+We wrote a [script](./data_changes/login_and_get_links.py) that gathers links for photos from the online website for beer lovers [Untappd]([untapped link](https://untappd.com/)), using the tags from the website itself as out correct labels(for example, we send the script to download all photos of a beer we know is a wheat beer, thus we created a "labeled" dataset, after gathering the links we used another [script](./data_changes/download.py) to download them/
+Next, since all the photos we user uploaded(social media like) we had a lot of irrelevant objects in the photos, so we used the pre-trained YOLO_v2 for its object detection and bbox features to get only the images of the beers themselves.
+Note that the YOLO model only had options for detecting cups or bottles, so we still had to manuelly delete a few dozen photos, but we used them for out control group as "not beer" label.
 link to dataset:
 <div align="center">
   <img src="./data/plots/random_images_from_train.png"/>
 </div>
 
-## Object Detection Models
-In this project we trained the following SOTA object detection models:
-//out_of_date
-[torchvision models](https://pytorch.org/vision/stable/models.html#object-detection-instance-segmentation-and-person-keypoint-detection):
-- `ssd` [SSD: Single Shot MultiBox Detector](http://dx.doi.org/10.1007/978-3-319-46448-0_2)
-- `faster rcnn` [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497)
-- `retinanet` [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
-- `fcos` [FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/abs/1904.01355)
+## Imported models
+In this project we trained (except) the following models and used:
 
-[ultralytics yolo](https://docs.ultralytics.com/models/yolov8/):
-- `yolov8m` [YOLOv8 models documentation](https://docs.ultralytics.com/models/yolov8/)
+- `efficientnet_b0` [EfficientNet (TensorFlow Implementation)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet) – Used as a benchmark model for comparison.
+- `vit_base_patch16_224_dino` [DINO (Facebook Research)](https://github.com/facebookresearch/dino) – Used as a benchmark model for comparison.
+- `yolov8n` [YOLOv8 models documentation](https://docs.ultralytics.com/models/yolov8/)
 
 ### Hyperparameter Tuning
 A comprehensive search was performed across multiple hyperparameter spaces, including model preweight strategies, learning rates, momentum, and weight decay parameters.
@@ -172,11 +167,9 @@ Below is a detailed table of the tuned hyperparameters.
 |----------------|--------------------|---------------------------------------|---------------------------------------------------|
 | Model          | `preweight_mode`   | `random`                              | Model trained from scratch (no pretrained weights)|
 | Training       | `batch_size`       | `64`                                  | Number of samples per training batch              |
-| Training       | `epochs`           | `5` (search), `50` (final)            | Trials for tuning, then final full run            |
+| Training       | `epochs`           | `5` (search), `50` (our CNN) , '20' (improted models)           | Trials for tuning, then final full run            |
 | Optimizer      | `optimizer`        | `AdamW`                               | Optimization algorithm                            |
 | Adam/AdamW     | `lr`               | `[1e-4, 1e-3]` (log scale)            | Learning rate for AdamW (tuned)                   |
-| Adam/AdamW     | `beta1`            | `0.9`                                 | Beta1 parameter (default)                         |
-| Adam/AdamW     | `beta2`            | `0.999`                               | Beta2 parameter (default)                         |
 | AdamW          | `weight_decay`     | `[1e-6, 1e-3]` (log scale)            | Weight decay regularization (tuned)               |
 | Regularization | `dropout`          | `[0.1, 0.6]`                          | Dropout probability in classifier layers (tuned)  |
 | Scheduler      | `scheduler`        | `ReduceLROnPlateau`                   | Learning rate scheduler type                      |
