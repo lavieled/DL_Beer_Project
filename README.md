@@ -80,7 +80,6 @@ This project addresses the challenge of visually identifying beer types from rea
 | `BeerDL_50_augmented.ipynb`     | Jupyter notebook for a simple CNN version of a beer classifier.                 |
 | `BeerDL_lavie_model.ipynb`      |** Jupyter notebook for Lavie's version of a beer classifier. **                     |
 | `EffnetAndDinoTraining.ipynb`   |  Jupyter notebook for comparing DINO and EffNet   |
-| `config!!!!11!!!!`                        | Directory containing environment configuration files.                   |
 | `data`                          | Directory containing all the datasets and results                       |
 | `HW`                            | Directory for our homework assigments.                                  |
 
@@ -88,7 +87,6 @@ This project addresses the challenge of visually identifying beer types from rea
 
 1. Get Anaconda with Python 3, follow the instructions according to your OS (Windows/Mac/Linux) at [link](https://www.anaconda.com/download)
 2. Install the packages bellow.
-3. Alternatively, you can use [requirements.txt](./requirements.txt) and run 'pip install -r requirements.txt'.
 
 ### Core Deep Learning & Computer Vision
 
