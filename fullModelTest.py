@@ -177,8 +177,7 @@ def dino_partialtrain(dropout=0.4, num_classes=6, n_blocks=3):
 
 if __name__ == "__main__":
     # Request input of image filename (with path if not in current dir)
-    image_path = r"test2.jpg"
-#input("Enter the path to the image file: ").strip()
+    image_path = input("Enter the path to the image file: ").strip()
     boxes = detect_bounding_boxes_on_image(image_path)
     img = cv2.imread(image_path)
 
