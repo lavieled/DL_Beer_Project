@@ -55,19 +55,31 @@ We also compared our results to a “human benchmark,” implemented as a GUI ga
   <img src="./data/readme/yolo_video.gif" alt="Pothole Detection" width="600">//change
 </div>
 
+
 ## Table of Contents
-* [Files in the repository](#Files-in-the-repository)
-* [Installation Instructions](#Installation-Instructions)
-  * [Libraries to Install](#Libraries-to-Install)
-* [How to Use](#How-to-Use)
-* [Dataset](#Dataset)
-* [Object Detection Models](#Object-Detection-Models)
-  * [Hyperparameter Tuning](#Hyperparameter-Tuning)
-* [Training Results](#Training-Results)
-* [Data Augmentations](#Data-Augmentations)
-* [Post Augmentations Results](#Post-Augmentations-Results)
-* [Potholes Severity](#Potholes-Severity)
-* [References](#References)
+- [Abstract](#abstract)  
+- [Files in the Repository](#files-in-the-repository)  
+- [Installation Instructions](#installation-instructions)  
+  - [Core Deep Learning & Computer Vision](#core-deep-learning--computer-vision)  
+  - [Data Processing & Analysis](#data-processing--analysis)  
+  - [Image Processing & Visualization](#image-processing--visualization)  
+  - [Web Scraping & Data Collection](#web-scraping--data-collection)  
+  - [User Interface & Utilities](#user-interface--utilities)  
+- [How to Use](#how-to-use)  
+- [Gathering the Dataset](#gathering-the-dataset)  
+- [Imported Models](#imported-models)  
+  - [Hyperparameter Tuning](#hyperparameter-tuning)  
+- [Training Results](#training-results)  
+  - [Our Model’s Architecture](#our-models-architecture)  
+  - [Model Results with No Data Augmentations](#model-results-with-no-data-augmentations)  
+- [Data Augmentations](#data-augmentations)  
+- [Results](#results)  
+  - [Barry’s Model Results](#barrys-model-results)  
+  - [Lavie’s Model Results](#lavies-model-results)  
+  - [DINO Results](#dino-results)  
+  - [EfficientNet Results](#efficientnet-results)  
+- [References](#references)  
+
 
 ## Files in the repository
 
