@@ -86,7 +86,6 @@ This project addresses the challenge of visually identifying beer types from rea
 | `BeerDLNoAugmentations50Epochs.ipynb`  | CNN beer classifier training without augmentations for 50 epochs.                            |
 | `EffnetAndDinoTraining.ipynb`          | Comparison of EfficientNet and DINO training strategies.                                     |
 | `data`                                 | Directory containing datasets and results.                                                   |
-| `HW`                                   | Directory containing homework assignments.                                                   |
 
 ## Installation Instructions
 
