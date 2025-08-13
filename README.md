@@ -70,17 +70,20 @@ This project addresses the challenge of visually identifying beer types from rea
 
 ## Files in the repository
 
-| File Name                       | Purpose                                                                 |
-|---------------------------------|-------------------------------------------------------------------------|
-| `login_and_get_links.py`        | login to untapd website and retrive links for specified beer type photos.|
-| `download.py`                   | uses the image linkes to go and download all the wanted photos.         |
-| `sortToCupNoCup.py`             | using YOLO model to identify and crop out the beers for the photos      |
-| `selfTest.py`                   | A simple GUI game to test human ability to solve our problem, used as a benchmark. |
-| `fullModelTest.py`              | a script that pipelines the process from the uncropped untagged image input to a results with bbox and tags. |
-| `BeerDL_50_augmented.ipynb`     | Jupyter notebook for a simple CNN version of a beer classifier.                 |
-| `EffnetAndDinoTraining.ipynb`   |  Jupyter notebook for comparing DINO and EffNet   |
-| `data`                          | Directory containing all the datasets and results                       |
-| `HW`                            | Directory for our homework assigments.                                  |
+| File Name                              | Purpose                                                                                      |
+|----------------------------------------|----------------------------------------------------------------------------------------------|
+| `login_and_get_links.py`               | Logs in to Untappd and retrieves links for specified beer type photos.                       |
+| `download.py`                          | Uses the image links to download all desired photos.                                         |
+| `sortToCupNoCup.py`                    | Uses YOLOv8 to identify and crop beer glasses from the photos.                               |
+| `selfTest.py`                          | Simple GUI game to test human classification ability, used as a benchmark.                   |
+| `fullModelTest.py`                     | Pipelines the process from uncropped, untagged image input to results with bounding boxes and tags. |
+| `BeerDL_50_augmented.ipynb`            | Trains a simple CNN beer classifier with data augmentation.                                  |
+| `BeerDL_lavie_model.ipynb`             | Lavie’s custom CNN beer classifier implementation and training.                              |
+| `BeerDLNoAugmentations40Epochs.ipynb`  | CNN beer classifier training without augmentations for 40 epochs.                            |
+| `BeerDLNoAugmentations50Epochs.ipynb`  | CNN beer classifier training without augmentations for 50 epochs.                            |
+| `EffnetAndDinoTraining.ipynb`          | Comparison of EfficientNet and DINO training strategies.                                     |
+| `data`                                 | Directory containing datasets and results.                                                   |
+| `HW`                                   | Directory containing homework assignments.                                                   |
 
 ## Installation Instructions
 
