@@ -305,9 +305,22 @@ To further increase dataset diversity and size, we created an **additional augme
 
 
 ## References
+[1] Untappd – Discover Beer. [Online]. Available: https://untappd.com  
 
-- [Untappd – Discover Beer](https://untappd.com) – Source for beer images and type labels.
-- [YOLOv2 by Joseph Redmon](https://pjreddie.com/darknet/yolov2/) – Used for initial dataset object detection and cropping.
-- [DINO (Facebook Research)](https://github.com/facebookresearch/dino) – Used as a benchmark model for comparison.
-- [EfficientNet (TensorFlow Implementation)](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet) – Used as a benchmark model for comparison.
+[2] J. Redmon, “YOLOv2: Real-Time Object Detection,” 2017. [Online]. Available: https://pjreddie.com/darknet/yolov2/  
 
+[3] Ultralytics, “YOLOv8 Models Documentation,” 2024. [Online]. Available: https://docs.ultralytics.com/models/yolov8/  
+
+[4] M. Caron et al., “Emerging Properties in Self-Supervised Vision Transformers,” Facebook AI Research, 2021. [Online]. Available: https://github.com/facebookresearch/dino  
+
+[5] M. Tan and Q. Le, “EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks,” Google AI, 2019. [Online]. Available: https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet  
+
+[6] PyTorch, “PyTorch – An Open Source Machine Learning Framework,” 2024. [Online]. Available: https://pytorch.org/  
+
+[7] TorchVision, “TorchVision: Datasets, Transforms, and Models,” 2024. [Online]. Available: https://pytorch.org/vision/stable/  
+
+[8] R. Wightman, “PyTorch Image Models (timm),” 2024. [Online]. Available: https://github.com/huggingface/pytorch-image-models  
+
+[9] OpenCV, “Open Source Computer Vision Library,” 2024. [Online]. Available: https://opencv.org/  
+
+[10] A. Clark, “Pillow – The Friendly PIL Fork,” 2024. [Online]. Available: https://pillow.readthedocs.io/  
