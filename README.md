@@ -39,6 +39,10 @@
   </table>
 </h4>
 
+<p align="center">
+  <img src="./data/readme/our_example_detection_barry.jpg" width="800"/>
+</p>
+
 ## Abstract
 This project addresses the challenge of visually identifying beer types from real world images, a task complicated by noisy backgrounds, varied presentation styles, and overlapping visual features between classes. We built a custom dataset by scraping images from the Untappd platform and preprocessing them with YOLOv8 to isolate relevant objects. Several state-of-the-art models, including DINO and EfficientNet, were evaluated under different training strategies: feature extraction, partial fine-tuning, and full fine-tuning, alongside a lightweight CNN developed as a simple and low cost baseline. Performance was compared against a “human benchmark” obtained via a custom GUI classification game. Results show that while our lightweight model exceeded human accuracy, transfer learning with partial fine-tuning achieved the best balance between accuracy and computational efficiency, with EfficientNet full fine-tuning reaching the highest overall performance.
 
@@ -308,6 +312,12 @@ note that this is a stock image while our model only trained on user submitted i
   <img src="./data/readme/test2_all_models.jpg" width="800"/>
 </p>
 
+
+<p align="center">
+  <img src="./data/readme/our_example_detection_barry.jpg" width="800"/>
+</p>
+
+# Cheers!
 ## References
 1. [Untappd – Discover Beer](https://untappd.com) – Source for beer images and type labels.  
 2. [Ultralytics – YOLOv8 Models Documentation](https://docs.ultralytics.com/models/yolov8/) – Object detection model used for preprocessing and dataset creation.  
