@@ -293,7 +293,8 @@ To further increase dataset diversity and size, we created an **additional augme
 ## Concluding pipeline example
 
 To conclude our project, we ran a single example image set through **all of our final models** to compare their predictions side-by-side.  
-This gives us a clear visual understanding of how each model responds to the same input, making it easy to spot strengths and weaknesses.
+This gives us a clear visual understanding of how each model responds to the same input, we see much more success detecting the stout beer, while the other beers get several different classifications,
+note that this is a stock image while our model only trained on user submitted images, this might explain why some models struggle more.
 
 **Input photo:**
 
