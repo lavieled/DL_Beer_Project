@@ -141,7 +141,7 @@ If you wish to test yourself, you can run 'selfTest.py' and have fun.
 You can also download our weights from the following link:
 - [Drive](https://technionmail-my.sharepoint.com/:f:/g/personal/barryshafran_campus_technion_ac_il/El2xVVe9De1FprcCWzj5MyEBwzbr2RncuJIcf4dOZvM6gA?e=eUL8cz)
   
-  Just download the `models.zip` file and replace it with the existing `./data/models` folder in the repository.
+  Just download the `models.zip` file and replace it with the existing `models` folder in the repository.
 
 ## Gathering the Dataset
 We could not find any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
