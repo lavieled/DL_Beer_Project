@@ -140,14 +140,27 @@ You can also download our weights from the following link:
   Just download the `models.zip` file and replace it with the existing `./data/models` folder in the repository.
 
 ## Gathering the Dataset
-We could not fiind any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
+We could not find any tagged dataset that would help our project so we used avaliable resources and some deep learning models to create the needed dataset. 
 We wrote a [script](./data_changes/login_and_get_links.py) that gathers links for photos from the online website for beer lovers [Untappd]([untapped link](https://untappd.com/)), using the tags from the website itself as out correct labels(for example, we send the script to download all photos of a beer we know is a wheat beer, thus we created a "labeled" dataset, after gathering the links we used another [script](./data_changes/download.py) to download them/
 Next, since all the photos we user uploaded(social media like) we had a lot of irrelevant objects in the photos, so we used the pre-trained YOLO_v2 for its object detection and bbox features to get only the images of the beers themselves.
 Note that the YOLO model only had options for detecting cups or bottles, so we still had to manuelly delete a few dozen photos, but we used them for out control group as "not beer" label.
 link to dataset:
-<div align="center">
-  <img src="./data/plots/random_images_from_train.png"/>
-</div>
+<p align="center">
+  <img src="./photos/cider/ace-cider-the-california-cider-company-ace-pineapple-cider_ace-cider-the-california-cider-company-ace-pineapple-cider_002.jpg_crop_0.jpg" width="120"/>
+  <img src="./photos/ipa/bells-brewery-two-hearted-ipa_bells-brewery-two-hearted-ipa_029.jpg_crop_1.jpg" width="120"/>
+  <img src="./photos/lager/stella-artois-stella-artois_stella-artois-stella-artois_062.jpg_crop_3.jpg" width="120"/>
+  <img src="./photos/not_beer_cup/angry-orchard-cider-company-crisp-apple_angry-orchard-cider-company-crisp-apple_023.jpg_crop_0.jpg" width="120"/>
+  <img src="./photos/stout/founders-brewing-co-breakfast-stout_founders-brewing-co-breakfast-stout_089.jpg_crop_1.jpg" width="120"/>
+  <img src="./photos/wheat/bells-brewery-oberon-ale_bells-brewery-oberon-ale_025.jpg_crop_0.jpg" width="120"/>
+  <br>
+  <sub>Cider</sub>
+  <sub>IPA</sub>
+  <sub>Lager</sub>
+  <sub>Not Beer</sub>
+  <sub>Stout</sub>
+  <sub>Wheat</sub>
+</p>
+
 
 ## Imported models
 In this project we trained (except) the following models and used:
