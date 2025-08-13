@@ -74,8 +74,7 @@ We also compared our results to a “human benchmark,” implemented as a GUI ga
   - [Model Results with No Data Augmentations](#model-results-with-no-data-augmentations)  
 - [Data Augmentations](#data-augmentations)  
 - [Results](#results)  
-  - [Barry’s Model Results](#barrys-model-results)  
-  - [Lavie’s Model Results](#lavies-model-results)  
+  - [Basic CNN Model Results](#Basic-CNN-model-results)  
   - [DINO Results](#dino-results)  
   - [EfficientNet Results](#efficientnet-results)  
 - [References](#references)  
@@ -273,17 +272,12 @@ To further increase dataset diversity and size, we created an **additional augme
 
 ## Results
 
-### Barry's model results
+### Basic CNN model results
 
 <img src="./data/readme/barry_model_results.png" width="400"/> 
 
-*Barry's Test Accuracy: **72.59%** — Accuracy improves steadily throughout training, reaching a plateau near the end. Loss decreases consistently, indicating stable learning without major overfitting. However, the final accuracy is lower compared to other approaches, suggesting that this configuration may lack sufficient capacity to capture all dataset-specific patterns.*
+*basic CNN model Test Accuracy: **72.59%** — Accuracy improves steadily throughout training, reaching a plateau near the end. Loss decreases consistently, indicating stable learning without major overfitting. However, the final accuracy is lower compared to other approaches, suggesting that this configuration may lack sufficient capacity to capture all dataset-specific patterns.*
 
-
-### Lavie's model results
-<img src="./data/readme/lavie_model_results.png" width="400"/> 
-
-*Lavie's Test Accuracy: **71.72%** — Accuracy improves quickly in the first 10 epochs, then gradually climbs toward ~72%. The steady decline in training loss suggests consistent learning without severe overfitting. However, the relatively early plateau in accuracy indicates that the model may be limited by its capacity or the features being used, preventing it from capturing all class distinctions effectively.*
 
 ### Effnet results
 
