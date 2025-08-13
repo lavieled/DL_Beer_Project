@@ -305,22 +305,15 @@ To further increase dataset diversity and size, we created an **additional augme
 
 
 ## References
-[1] Untappd – Discover Beer. [Online]. Available: https://untappd.com  
-
-[2] J. Redmon, “YOLOv2: Real-Time Object Detection,” 2017. [Online]. Available: https://pjreddie.com/darknet/yolov2/  
-
-[3] Ultralytics, “YOLOv8 Models Documentation,” 2024. [Online]. Available: https://docs.ultralytics.com/models/yolov8/  
-
-[4] M. Caron et al., “Emerging Properties in Self-Supervised Vision Transformers,” Facebook AI Research, 2021. [Online]. Available: https://github.com/facebookresearch/dino  
-
-[5] M. Tan and Q. Le, “EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks,” Google AI, 2019. [Online]. Available: https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet  
-
-[6] PyTorch, “PyTorch – An Open Source Machine Learning Framework,” 2024. [Online]. Available: https://pytorch.org/  
-
-[7] TorchVision, “TorchVision: Datasets, Transforms, and Models,” 2024. [Online]. Available: https://pytorch.org/vision/stable/  
-
-[8] R. Wightman, “PyTorch Image Models (timm),” 2024. [Online]. Available: https://github.com/huggingface/pytorch-image-models  
-
-[9] OpenCV, “Open Source Computer Vision Library,” 2024. [Online]. Available: https://opencv.org/  
-
-[10] A. Clark, “Pillow – The Friendly PIL Fork,” 2024. [Online]. Available: https://pillow.readthedocs.io/  
+1. [Untappd – Discover Beer](https://untappd.com) – Source for beer images and type labels.  
+2. [Ultralytics – YOLOv8 Models Documentation](https://docs.ultralytics.com/models/yolov8/) – Object detection model used for preprocessing and dataset creation.  
+3. [DINO – Emerging Properties in Self-Supervised Vision Transformers (Facebook AI Research)](https://github.com/facebookresearch/dino) – Vision Transformer model used for feature extraction and fine-tuning.  
+4. [EfficientNet – TensorFlow Implementation](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet) – CNN model used for classification experiments.  
+5. [PyTorch](https://pytorch.org/) – Main deep learning framework for training and evaluation.  
+6. [TorchVision](https://pytorch.org/vision/stable/) – Image datasets, transforms, and pretrained models.  
+7. [timm – PyTorch Image Models](https://github.com/huggingface/pytorch-image-models) – Additional pretrained models and utilities.  
+8. [OpenCV](https://opencv.org/) – Computer vision and image processing library.  
+9. [Pillow (PIL)](https://pillow.readthedocs.io/) – Image loading and processing library.  
+10. [Selenium](https://selenium.dev/documentation/) – Web automation framework used for scraping Untappd.  
+11. [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) – HTML/XML parsing library used for scraping.  
+12. [ChromeDriver](https://chromedriver.chromium.org/) – WebDriver for running Selenium with Google Chrome.  
