@@ -314,7 +314,7 @@ note that this is a stock image while our model only trained on user submitted i
 
 
 <p align="center">
-  <img src="./data/readme/our_example_detection_barry.jpg" width="800"/>
+  <img src="./data/readme/our_example_detection.jpg" width="800"/>
 </p>
 
 # Cheers!
