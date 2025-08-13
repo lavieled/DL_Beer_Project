@@ -290,6 +290,22 @@ To further increase dataset diversity and size, we created an **additional augme
 | ![EfficientNet Feature Extraction](./data/readme/effnet_feature_ext_result.png) | ![EfficientNet Partial](./data/readme/effnet_partial_results.png) | ![EfficientNet Full](./data/readme/effnet_full_results.png) |
 | *Final Test Accuracy: **67.76%** — The lowest-performing setup overall. Limited adaptation to the dataset due to frozen features.* | *Final Test Accuracy: **83.67%** — Large jump in accuracy, showing partial fine-tuning is highly effective for EfficientNet on this dataset.* | *Final Test Accuracy: **87.78%** — The best performance overall, with a steady accuracy climb and minimal overfitting.* |
 
+## Concluding pipeline example
+
+To conclude our project, we ran a single example image set through **all of our final models** to compare their predictions side-by-side.  
+This gives us a clear visual understanding of how each model responds to the same input, making it easy to spot strengths and weaknesses.
+
+**Input photo:**
+
+<p align="center">
+  <img src="./data/readme/test2.jpg" width="400"/>
+</p>
+
+**All the models output:**
+
+<p align="center">
+  <img src="./data/readme/test2_all_models.jpg" width="800"/>
+</p>
 
 ## References
 1. [Untappd – Discover Beer](https://untappd.com) – Source for beer images and type labels.  
