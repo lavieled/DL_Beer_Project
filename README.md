@@ -40,20 +40,8 @@
 </h4>
 
 ## Abstract
-Don’t you hate it when you drink a beer and don’t know what type it is? Or when the waiter mixes up your order?
+This project addresses the challenge of visually identifying beer types from real world images, a task complicated by noisy backgrounds, varied presentation styles, and overlapping visual features between classes. We built a custom dataset by scraping images from the Untappd platform and preprocessing them with YOLOv8 to isolate relevant objects. Several state-of-the-art models, including DINO and EfficientNet, were evaluated under different training strategies: feature extraction, partial fine-tuning, and full fine-tuning, alongside a lightweight CNN developed as a simple and low cost baseline. Performance was compared against a “human benchmark” obtained via a custom GUI classification game. Results show that while our lightweight model exceeded human accuracy, transfer learning with partial fine-tuning achieved the best balance between accuracy and computational efficiency, with EfficientNet full fine-tuning reaching the highest overall performance.
 
-In this project, we used the Untappd site and processed the data using the YOLO object detection model. On the modified dataset, we applied several augmentations and tested different state-of-the-art classification models, including DINO and EfficientNet, comparing their performance in recognizing beer types from visual input. We evaluated the results using different approaches to the data efficiency problem (freeze-out, fine-tuning, and partial training). 
-
-We also compared our results to a “human benchmark,” implemented as a GUI game for human beer detection, as well as to a basic model we built ourselves.
-
-
-
-
-
-
-<div align="center">
-  <img src="./data/readme/yolo_video.gif" alt="Pothole Detection" width="600">//change
-</div>
 
 
 ## Table of Contents
