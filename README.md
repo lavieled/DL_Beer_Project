@@ -78,7 +78,6 @@ This project addresses the challenge of visually identifying beer types from rea
 | `selfTest.py`                   | A simple GUI game to test human ability to solve our problem, used as a benchmark. |
 | `fullModelTest.py`              | a script that pipelines the process from the uncropped untagged image input to a results with bbox and tags. |
 | `BeerDL_50_augmented.ipynb`     | Jupyter notebook for a simple CNN version of a beer classifier.                 |
-| `BeerDL_lavie_model.ipynb`      |** Jupyter notebook for Lavie's version of a beer classifier. **                     |
 | `EffnetAndDinoTraining.ipynb`   |  Jupyter notebook for comparing DINO and EffNet   |
 | `data`                          | Directory containing all the datasets and results                       |
 | `HW`                            | Directory for our homework assigments.                                  |
