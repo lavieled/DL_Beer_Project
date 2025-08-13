@@ -135,7 +135,7 @@ If you wish to train the models and evaluate them your self you can run the note
 If you wish to test yourself, you can run 'selfTest.py' and have fun. 
 
 You can also download our weights from the following link:
-- [Google Drive](https://drive.google.com/drive/folders/1Zj22MpCoxBWR9_azWvHRTWe_qfoa9Fsj?usp=drive_link)//barry link wieght 
+- [Google Drive](https://technionmail-my.sharepoint.com/:f:/g/personal/barryshafran_campus_technion_ac_il/El2xVVe9De1FprcCWzj5MyEBwzbr2RncuJIcf4dOZvM6gA?e=eUL8cz)
   
   Just download the `models.zip` file and replace it with the existing `./data/models` folder in the repository.
 
@@ -297,4 +297,4 @@ To further increase dataset diversity and size, we created an **additional augme
 9. [Pillow (PIL)](https://pillow.readthedocs.io/) – Image loading and processing library.  
 10. [Selenium](https://selenium.dev/documentation/) – Web automation framework used for scraping Untappd.  
 11. [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) – HTML/XML parsing library used for scraping.  
-12. [ChromeDriver](https://chromedriver.chromium.org/) – WebDriver for running Selenium with Google Chrome.  
+
