@@ -78,7 +78,6 @@ This project addresses the challenge of visually identifying beer types from rea
 | `selfTest.py`                          | Simple GUI game to test human classification ability, used as a benchmark.                   |
 | `fullModelTest.py`                     | Pipelines the process from uncropped, untagged image input to results with bounding boxes and tags. |
 | `BeerDL_50_augmented.ipynb`            | Trains a simple CNN beer classifier with data augmentation.                                  |
-| `BeerDL_lavie_model.ipynb`             | Lavie’s custom CNN beer classifier implementation and training.                              |
 | `BeerDLNoAugmentations40Epochs.ipynb`  | CNN beer classifier training without augmentations for 40 epochs.                            |
 | `BeerDLNoAugmentations50Epochs.ipynb`  | CNN beer classifier training without augmentations for 50 epochs.                            |
 | `EffnetAndDinoTraining.ipynb`          | Comparison of EfficientNet and DINO training strategies.                                     |
