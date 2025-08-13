@@ -151,10 +151,9 @@ This is a small data set(for tests and example), for the full one please access:
 
    examples from the data with labels:
    
-| ![](./photos/cider/ace-cider-the-california-cider-company-ace-pineapple-cider_ace-cider-the-california-cider-company-ace-pineapple-cider_002.jpg_crop_0.jpg) | ![](./photos/ipa/bells-brewery-two-hearted-ipa_bells-brewery-two-hearted-ipa_029.jpg_crop_1.jpg) | ![](./photos/lager/stella-artois-stella-artois_stella-artois-stella-artois_062.jpg_crop_3.jpg) | ![](./photos/not_beer_cup/angry-orchard-cider-company-crisp-apple_angry-orchard-cider-company-crisp-apple_023.jpg_crop_0.jpg) | ![](./photos/stout/founders-brewing-co-breakfast-stout_founders-brewing-co-breakfast-stout_089.jpg_crop_1.jpg) | ![](./photos/wheat/bells-brewery-oberon-ale_bells-brewery-oberon-ale_025.jpg_crop_0.jpg) |
+| <img src="./photos/cider/ace-cider-the-california-cider-company-ace-pineapple-cider_ace-cider-the-california-cider-company-ace-pineapple-cider_002.jpg_crop_0.jpg" width="120"/> | <img src="./photos/ipa/bells-brewery-two-hearted-ipa_bells-brewery-two-hearted-ipa_029.jpg_crop_1.jpg" width="120"/> | <img src="./photos/lager/stella-artois-stella-artois_stella-artois-stella-artois_062.jpg_crop_3.jpg" width="120"/> | <img src="./photos/not_beer_cup/angry-orchard-cider-company-crisp-apple_angry-orchard-cider-company-crisp-apple_023.jpg_crop_0.jpg" width="120"/> | <img src="./photos/stout/founders-brewing-co-breakfast-stout_founders-brewing-co-breakfast-stout_089.jpg_crop_1.jpg" width="120"/> | <img src="./photos/wheat/bells-brewery-oberon-ale_bells-brewery-oberon-ale_025.jpg_crop_0.jpg" width="120"/> |
 |---|---|---|---|---|---|
 | **Cider** | **IPA** | **Lager** | **Not Beer** | **Stout** | **Wheat** |
-
 
 ## Imported models
 In this project we trained (except) the following models and used:
