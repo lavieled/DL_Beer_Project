@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # ----------------- CONFIG -----------------
-beer_types = ["lager", "wheat","stout","ipa","cider","ale"]
+beer_types = ["lager", "wheat","stout","ipa","cider"]
 max_photos_per_beer = 300
 max_photos_per_type = 1000
 output_csv = "photo_links.csv"
@@ -41,9 +41,9 @@ def collect_photo_links_for_type(beer_type, writer):
     driver.get(f"https://untappd.com/search?q={beer_type}&type=beer")
 
     try:
-        sort_dropdown = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "sort-selector")))
+        sort_dropdown = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "sort-selector"))) #Search by type
         sort_dropdown.click()
-        most_popular = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Most Popular']")))
+        most_popular = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Most Popular']"))) #Sort by most popular
         most_popular.click()
         time.sleep(2)
     except Exception as e:
@@ -77,7 +77,7 @@ def collect_photo_links_for_type(beer_type, writer):
         seen_ids = set()
         image_urls = []
 
-        while len(image_urls) < max_photos_per_beer and type_collected < max_photos_per_type:
+        while len(image_urls) < max_photos_per_beer and type_collected < max_photos_per_type: #Gather links
             soup = BeautifulSoup(driver.page_source, "html.parser")
             new_blocks = 0
             for div in soup.find_all("div", id=lambda x: x and x.startswith("photoJSON_")):
