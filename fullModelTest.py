@@ -61,12 +61,6 @@ def detect_bounding_boxes_on_image(image_path):
             (text_w, text_h), baseline = cv2.getTextSize(label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
             cv2.rectangle(img, (x1, y1 - text_h - baseline), (x1 + text_w, y1), color, -1)
             cv2.putText(img, label_text, (x1, y1 - baseline), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,0), 2, cv2.LINE_AA)
-
-    # Show the image with bounding boxes
-    # cv2.imshow("Detections", img)
-    # print("Press any key in the image window to close.")
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
     return bounding_boxes
 
 
