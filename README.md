@@ -1,5 +1,5 @@
 # <h1 align="center">ECE 046217 - Technion - Deep Learning - Project </h1> 
-## <h2 align="center"> "Thats not what i ordered!" - A Deep Learning beer classification model </h2>
+## <h2 align="center"> "Thats not my Beer!" - A Deep Learning beer classification model </h2>
 
 <h4 align="center">
   <table align="center" style="border: none;">
