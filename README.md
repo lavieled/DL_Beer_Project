@@ -31,7 +31,7 @@
     </tr>
     <tr style="border: none;">
       <td colspan="2" align="center" style="border: none">
-        <a href="https://youtu.be/..." target="_blank">//presentation vid
+        <a href="https://[youtu.be/...](https://www.youtube.com/watch?v=pdxP2XQx0E4&ab_channel=BaryShafran)" target="_blank">//presentation vid
           <img src="./data/readme/YouTubeLogo.png" width="50" height="50"/>
         </a>
       </td>
